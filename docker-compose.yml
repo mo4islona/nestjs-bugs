@@ -1,0 +1,16 @@
+version: '2.4'
+
+volumes:
+  db:
+
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: test_db
+    environment:
+      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5432:5432'
+    mem_limit: 1024M
